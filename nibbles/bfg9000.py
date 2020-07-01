@@ -19,6 +19,7 @@ import requests
 PASSWORD_LIST = '/usr/share/wordlists/rockyou.txt'
 RATE_LIMIT = 5
 RATE_LIMIT_ERROR = 'Blacklist protection'
+LOGIN_FAILED_ERROR = 'Incorrect username or password.'
 
 # Target information
 RHOST = '10.10.10.75'
@@ -46,7 +47,7 @@ def attempt_login(password: str, ip: str) -> bool:
         print("Rate limit hit, aborting!")
         exit(1)
 
-    return 'Incorrect username or password.' not in r.text
+    return LOGIN_FAILED_ERROR not in r.text
 
 
 def random_ip() -> str:
