@@ -80,13 +80,12 @@ def run(start_at: int = 1):
         password = password.strip()
         print(f"Attempt {num_attempts}: {ip}\t\t{password}")
 
-        result = attempt_login(password, ip)
-        num_attempts += 1
-
-        if result:
+        if attempt_login(password, ip):
             print(f"Password for {USERNAME} is {password}")
             break
+        
+        num_attempts += 1
 
-
+        
 if __name__ == '__main__':
     run()
