@@ -4,7 +4,7 @@ The first challenge with the Nibbles box is to log into the Nibbleblog web appli
 
 As a beginner, it's great to practise using many of the different tools at your disposal but, unfortunately, I ran into some problems when trying Burp Suite and Hydra. The main issue was that Nibbleblog blacklists an IP address for several minutes after 5 unsuccessful login attempts. It seemed like a good opportunity to try and write a program customised specifically for this attack.
 
-## bfg9000
+## [bfg9000](bfg9000.py)
 
 This program was written to work around the IP blacklisting. Using curl it was possible to test the theory that Nibbleblog might check the blacklist based on an IP address supplied in the `X-FORWARDED-FOR` HTTP header. This turned out to be the case. It was therefore possible to run an uninterrupted brute-force attack by changing the IP address in the `X-FORWARDED-FOR` header after every fifth attempt.
 
