@@ -6,7 +6,7 @@ As a beginner, it's great to practise using many of the different tools at your 
 
 ## [bfg9000](bfg9000.py)
 
-This program was written to work around the IP blacklisting. Using curl it was possible to test the theory that Nibbleblog might check the blacklist based on an IP address supplied in the `X-FORWARDED-FOR` HTTP header. This turned out to be the case. It was therefore possible to run an uninterrupted brute-force attack by changing the IP address in the `X-FORWARDED-FOR` header after every fifth attempt.
+This program was written to work around the IP blacklisting (and other hurdles - see the [Unsuccessful attempts](#unsuccessful-attempts) section below). Using curl it was possible to test the theory that Nibbleblog might check the blacklist based on an IP address supplied in the `X-FORWARDED-FOR` HTTP header. This turned out to be the case. It was therefore possible to run an uninterrupted brute-force attack by changing the IP address in the `X-FORWARDED-FOR` header after every fifth attempt.
 
 ## Unsuccessful attempts
 
