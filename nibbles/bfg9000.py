@@ -12,6 +12,9 @@ import requests
 
 
 # Brute force information
+# The `RATE_LIMIT` value should be the number of requests after
+# which an IP address is blacklisted. We will switch IP addresses
+# before this limit is hit to avoid spamming the blacklist log.
 PASSWORD_LIST = '/usr/share/wordlists/rockyou.txt'
 RATE_LIMIT = 5
 RATE_LIMIT_ERROR = 'Blacklist protection'
@@ -69,7 +72,7 @@ def run(start_at: int = 1):
             num_attempts += 1
             continue
 
-        if num_attempts % 5 == 0:
+        if num_attempts % (RATE_LIMIT - 1) == 0:
             ip = random_ip()
 
         password = password.strip()
