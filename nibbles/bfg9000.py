@@ -3,13 +3,13 @@ from random import randint
 import requests
 
 
-# ------------------------------------------------------------
+# -------------------------------------------------------------
 # TODO:
 # - Add all project specific information as program arguments.
 # - Add tried IP addresses to a set to avoid accidental reuse.
 # - Don't generate network or broadcast IP addresses.
-# - Think about removing the requests dependency.
-# ------------------------------------------------------------
+# - Consider removing the requests dependency and using urllib.
+# -------------------------------------------------------------
 
 
 # Brute force information
